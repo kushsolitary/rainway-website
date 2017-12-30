@@ -16,6 +16,30 @@ body {
   background: #060311;
   color: white; }
 
+.bands {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 800px;
+  overflow: hidden; }
+  .bands .band__1, .bands .band__2 {
+    position: absolute;
+    left: 0;
+    top: calc(-200% - 50px);
+    right: 0;
+    width: 200%;
+    left: 0;
+    height: 200%;
+    background-image: linear-gradient(-90deg, #171743 50%, #060311 100%);
+    z-index: -1;
+    transform-origin: 0 0;
+    transform: rotateZ(16deg); }
+  .bands .band__2 {
+    top: calc(-200% - 40px);
+    background-image: linear-gradient(-90deg, #2a2a72 50%, #060311 100%);
+    transform: rotateZ(14deg); }
+
 .container {
   max-width: 960px;
   margin: 0 auto; }
@@ -174,6 +198,26 @@ footer {
       margin-left: 15px; }
 
 @media (max-width: 600px) {
+  .bands {
+    height: 800px;
+    overflow: hidden; }
+    .bands .band__1, .bands .band__2 {
+      position: absolute;
+      left: 0;
+      top: calc(-100% - 70px);
+      right: 0;
+      width: 200%;
+      left: 0;
+      height: 100%;
+      background-image: linear-gradient(-90deg, #171743 50%, #060311 100%);
+      z-index: -1;
+      transform-origin: 0 0;
+      transform: rotateZ(24deg); }
+    .bands .band__2 {
+      top: calc(-100% - 50px);
+      background-image: linear-gradient(-90deg, #2a2a72 50%, #060311 100%);
+      transform: rotateZ(20deg); }
+
   .container {
     padding: 0 20px; }
 

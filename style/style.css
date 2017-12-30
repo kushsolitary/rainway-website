@@ -1,0 +1,175 @@
+/**
+ * RESET
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+a, a:focus, a:active {
+  text-decoration: none;
+  border: none;
+  outline: none; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #060311;
+  color: white; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto; }
+
+header {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between; }
+
+.logo {
+  height: 40px;
+  width: 121px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
+  display: block; }
+
+.nav {
+  padding-top: 5px;
+  list-style: none; }
+  .nav li {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 10px;
+    text-transform: uppercase; }
+  .nav a {
+    display: inline-block;
+    color: white;
+    letter-spacing: 1px;
+    height: 30px;
+    line-height: 30px; }
+  .nav .register-top {
+    padding: 0 20px;
+    border: 1px solid #33ADEB;
+    border-radius: 15px;
+    transition: all 0.2s ease; }
+    .nav .register-top:hover {
+      border-color: white; }
+
+.primary {
+  font-size: 36px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 120px; }
+
+.secondary {
+  max-width: 620px;
+  margin: 20px auto;
+  opacity: 0.7;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 27px;
+  text-align: center; }
+
+h2 {
+  font-size: 24px; }
+
+p {
+  margin-top: 25px;
+  opacity: 0.7;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 27px; }
+
+.buttons {
+  margin-top: 40px;
+  text-align: center; }
+  .buttons .download-button, .buttons .web-button {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0 30px;
+    height: 44px;
+    line-height: 46px;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 22px;
+    background-color: #4282DC;
+    background-image: linear-gradient(90deg, transparent 0%, #4F5BCF 98%);
+    transition: all 0.2s ease; }
+  .buttons .download-button:hover {
+    background-color: #33ADEB; }
+  .buttons .web-button {
+    border: 1px solid #33ADEB;
+    background: none; }
+    .buttons .web-button:hover {
+      border-color: white; }
+
+.interface {
+  width: 100%;
+  margin-top: 90px; }
+
+.benefits {
+  margin: 0 -25px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px; }
+
+.benefits__item {
+  padding: 80px 25px 0;
+  background-position: 25px top;
+  background-size: auto 50px;
+  background-repeat: no-repeat; }
+  .benefits__item.benefits__item--free {
+    background-image: url(../img/free.png); }
+  .benefits__item.benefits__item--hardware {
+    background-image: url(../img/gpu.png); }
+  .benefits__item.benefits__item--anywhere {
+    background-image: url(../img/devices.png); }
+
+.benefits--no-image .benefits__item {
+  padding: 0 25px 0; }
+
+.featured {
+  margin: 130px 0;
+  background-image: linear-gradient(-135deg, #2F2E84 0%, #130A36 100%);
+  padding: 140px 0;
+  text-align: center;
+  position: relative; }
+  .featured:after, .featured:before {
+    position: absolute;
+    content: '';
+    left: calc(50% - 6px);
+    top: -62px;
+    background-image: url(../img/s_top.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 126px; }
+  .featured:before {
+    top: auto;
+    bottom: -63px;
+    background-image: url(../img/s_bottom.png); }
+  .featured p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px; }
+  .featured .fps {
+    margin-top: 90px;
+    width: 580px; }
+
+footer {
+  margin-top: 100px;
+  border-top: 1px solid #2F2D83;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between; }
+  footer p {
+    margin: 0;
+    font-size: 12px;
+    color: white;
+    opacity: 1; }
+    footer p a {
+      display: inline-block;
+      margin-left: 15px; }
+
+/*# sourceMappingURL=style.css.map */

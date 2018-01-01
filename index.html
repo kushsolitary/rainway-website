@@ -22,7 +22,7 @@
 			<ul class="nav">
 				<li><a href="/">Open in browser</a></li>
 				<li><a href="/">Download Client</a></li>
-				<li><a class="register-top" href="/">Register</a></li>
+				<li><a class="register-top  modal-trigger" data-target="register" href="#">Register</a></li>
 			</ul>
 		</header>
 
@@ -84,5 +84,32 @@
 			</p>
 		</footer>
 	</div>
+
+	<div class="modal-overlay"></div>
+	<div class="modal  modal--register">
+		<a href="#" class="modal__close"></a>
+		<h3>Create an account</h3>
+
+		<form action="">
+			<input type="text" name="username" id="username" placeholder="Username" required>
+			<input type="email" name="email" id="email" placeholder="Email Address" required>
+
+			<div class="half-inputs">
+				<input type="password" name="password" id="password" placeholder="Password" required>
+				<input type="password" name="password2" id="password2" placeholder="Repeat Password" required>
+			</div>
+
+			<div class="terms">
+				<input type="checkbox" id="terms">
+				<label for="terms">I have read and agreed to the Terms of Service</label>
+			</div>
+
+			<input type="submit" name="submit" value="Create Account">
+		</form>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+
 </body>
 </html>

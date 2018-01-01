@@ -15,6 +15,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: #060311;
   color: white; }
+  body.modal-visible {
+    overflow: hidden; }
 
 .bands {
   position: absolute;
@@ -22,7 +24,8 @@ body {
   top: 0;
   right: 0;
   height: 800px;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1; }
   .bands .band__1, .bands .band__2 {
     position: absolute;
     left: 0;
@@ -32,7 +35,6 @@ body {
     left: 0;
     height: 200%;
     background-image: linear-gradient(-90deg, #171743 50%, #060311 100%);
-    z-index: -1;
     transform-origin: 0 0;
     transform: rotateZ(16deg); }
   .bands .band__2 {
@@ -43,6 +45,23 @@ body {
 .container {
   max-width: 960px;
   margin: 0 auto; }
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: none;
+  z-index: -1;
+  transition: all 0.2s ease; }
+
+body.modal-visible .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+  z-index: 101; }
 
 header {
   padding-top: 30px;
@@ -197,6 +216,118 @@ footer {
       display: inline-block;
       margin-left: 15px; }
 
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  max-width: 500px;
+  width: 500px;
+  background: #060311;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 40px;
+  text-align: center;
+  z-index: -1;
+  transition: all 0.2s ease; }
+  .modal.modal--visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 101;
+    top: 50%; }
+  .modal .modal__close {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    opacity: 0.5;
+    top: 15px; }
+  .modal .modal__close:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: white;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg); }
+  .modal .modal__close:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    border-radius: 10px;
+    height: 15px;
+    background: white;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg); }
+  .modal h3 {
+    font-size: 18px; }
+  .modal input[type=text], .modal input[type=email], .modal input[type=password] {
+    display: block;
+    width: 100%;
+    padding: 0;
+    height: 45px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    appearance: none;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 45px;
+    transition: all 0.2s ease; }
+    .modal input[type=text]:focus, .modal input[type=text]:active, .modal input[type=email]:focus, .modal input[type=email]:active, .modal input[type=password]:focus, .modal input[type=password]:active {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid white; }
+  .modal .half-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px -20px 0; }
+    .modal .half-inputs input {
+      margin: 0 20px; }
+  .modal .terms {
+    display: flex;
+    align-items: center;
+    margin-top: 30px; }
+    .modal .terms input {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      cursor: pointer; }
+    .modal .terms label {
+      font-size: 12px;
+      padding-left: 10px;
+      cursor: pointer; }
+  .modal input[type=submit] {
+    appearance: none;
+    background-image: linear-gradient(-90deg, #4282DC 0%, #4F5BCF 98%);
+    border-radius: 100px;
+    display: block;
+    height: 45px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 45px;
+    margin-top: 40px;
+    border: none;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    background-color: #4282DC;
+    background-image: linear-gradient(90deg, transparent 0%, #4F5BCF 98%);
+    transition: all 0.2s ease;
+    font-family: 'Montserrat', sans-serif; }
+    .modal input[type=submit]:hover {
+      background-color: #33ADEB; }
+
 @media (max-width: 600px) {
   .bands {
     height: 800px;
@@ -206,7 +337,7 @@ footer {
       left: 0;
       top: calc(-100% - 70px);
       right: 0;
-      width: 200%;
+      width: 210%;
       left: 0;
       height: 100%;
       background-image: linear-gradient(-90deg, #171743 50%, #060311 100%);
@@ -287,6 +418,17 @@ footer {
     footer .social {
       margin-top: 20px; }
     footer .social__links {
-      display: block; } }
+      display: block; }
+
+  .modal.modal--visible {
+    overflow: scroll;
+    border: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: none; } }
 
 /*# sourceMappingURL=style.css.map */

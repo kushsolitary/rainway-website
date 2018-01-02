@@ -20,8 +20,8 @@
 			<a href="/" class="logo"></a>
 
 			<ul class="nav">
-				<li><a href="/">Open in browser</a></li>
-				<li><a href="/">Download Client</a></li>
+				<li><a href="#">Open in browser</a></li>
+				<li><a href="#" class="download-top  download-button--disabled">Download Server</a></li>
 				<li><a class="register-top  modal-trigger" data-target="register" href="#">Register</a></li>
 			</ul>
 		</header>
@@ -30,8 +30,8 @@
 		<p class="secondary">Streaming games have never been this easier! Rainway makes streaming games so easy even your grandma can now play games.</p>
 
 		<div class="buttons">
-			<a href="" class="download-button">Download Server</a>
-			<a href="" class="web-button">Open in Browser</a>
+			<a href="#" class="download-button  download-button--disabled">Download Server</a>
+			<a href="#" class="web-button">Open in Browser</a>
 		</div>
 
 		<img class="interface" src="img/interface.jpg" alt="">
@@ -78,8 +78,8 @@
 			<p class="social">
 				For more information, visit us on social media
 				<span class="social__links">
-					<a href=""><img src="img/twitter.png" height="12" alt=""></a>
-					<a href=""><img src="img/fb.png" height="12" alt=""></a>
+					<a href="#"><img src="img/twitter.png" height="12" alt=""></a>
+					<a href="#"><img src="img/fb.png" height="12" alt=""></a>
 				</span>
 			</p>
 		</footer>
@@ -90,21 +90,23 @@
 		<a href="#" class="modal__close"></a>
 		<h3>Create an account</h3>
 
-		<form action="">
-			<input type="text" name="username" id="username" placeholder="Username" required>
-			<input type="email" name="email" id="email" placeholder="Email Address" required>
+		<form class="register" action="">
+			<input type="text" name="username" id="regUsername" placeholder="Username" required>
+			<input type="email" name="email" id="regEmail" placeholder="Email Address" required>
 
 			<div class="half-inputs">
-				<input type="password" name="password" id="password" placeholder="Password" required>
-				<input type="password" name="password2" id="password2" placeholder="Repeat Password" required>
+				<input type="password" name="password" id="regPassword" placeholder="Password" required>
+				<input type="password" name="password2" id="regRepeatPassword" placeholder="Repeat Password" required>
 			</div>
 
 			<div class="terms">
-				<input type="checkbox" id="terms">
+				<input type="checkbox" id="terms" class="form-check-input">
 				<label for="terms">I have read and agreed to the Terms of Service</label>
 			</div>
+			
+			<div class="info-box"></div>
 
-			<input type="submit" name="submit" value="Create Account">
+			<input type="submit" name="submit" class="btn-submit" value="Create Account">
 		</form>
 	</div>
 

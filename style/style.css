@@ -88,7 +88,8 @@ header {
     color: white;
     letter-spacing: 1px;
     height: 30px;
-    line-height: 30px; }
+    line-height: 30px;
+    transition: all 0.2s ease; }
   .nav .register-top {
     padding: 0 20px;
     border: 1px solid #33ADEB;
@@ -146,6 +147,10 @@ p {
     background: none; }
     .buttons .web-button:hover {
       border-color: white; }
+
+.download-button--disabled, .btn-disabled {
+  pointer-events: none;
+  opacity: 0.5; }
 
 .interface {
   width: 100%;
@@ -231,7 +236,7 @@ footer {
   padding: 40px;
   text-align: center;
   z-index: -1;
-  transition: all 0.2s ease; }
+  transition: opacity 0.2s ease, top 0.2s ease; }
   .modal.modal--visible {
     opacity: 1;
     visibility: visible;
@@ -316,17 +321,30 @@ footer {
     letter-spacing: 1px;
     text-transform: uppercase;
     line-height: 45px;
-    margin-top: 40px;
+    margin-top: 20px;
     border: none;
     width: 100%;
     outline: none;
     cursor: pointer;
-    background-color: #4282DC;
-    background-image: linear-gradient(90deg, transparent 0%, #4F5BCF 98%);
+    background-color: #33CF6E;
+    background-image: linear-gradient(90deg, transparent 0%, #46BC78 98%);
     transition: all 0.2s ease;
     font-family: 'Montserrat', sans-serif; }
     .modal input[type=submit]:hover {
-      background-color: #33ADEB; }
+      background-color: #0DFF67; }
+  .modal .info-box {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: left;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    display: none; }
+    .modal .info-box.alert-danger {
+      border-color: #C82D2D; }
+    .modal .info-box.alert-success {
+      border-color: rgba(255, 255, 255, 0.3); }
 
 @media (max-width: 600px) {
   .bands {

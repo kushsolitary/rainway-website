@@ -65,6 +65,81 @@ $.ajax({
   url: 'https://releases.rainway.io/Installer_current.json',
   crossDomain: true,
   success: function (data) {
-  	// console.log(data);
+  	var url = 'https://releases.rainway.io/' + data.Name + '_' + data.Version + '.exe'
+  	$(".download-button, .download-top").attr('href', url).removeClass('download-button--disabled')
   }
 });
+
+// Registration
+var _a = [".btn-submit", "#regUsername", "#regEmail", "#regPassword", "#regRepeatPassword", ".form-check-input"].map(function(x) {
+        return $(x);
+    }),
+    $submit = _a[0],
+    $username = _a[1],
+    $email = _a[2],
+    $password = _a[3],
+    $passwordValidate = _a[4],
+    $checkbox = _a[5];
+var submitEnabled = true;
+
+function disableSubmit() {
+    $submit.removeClass("btn-disabled").addClass("btn-disabled");
+    submitEnabled = false;
+}
+
+function enableSubmit() {
+    $submit.removeClass("btn-disabled");
+    submitEnabled = true;
+}
+
+$('form.register').submit(function(e) {
+    if (submitEnabled) {
+        disableSubmit();
+        var _a = [$username, $email, $password, $passwordValidate, $checkbox].map(function(x) {
+                return x.val();
+            }),
+            username = _a[0],
+            email = _a[1],
+            password = _a[2],
+            passwordValidate = _a[3];
+        var checked = $checkbox.is(":checked");
+        
+        if (checked) {
+            $.ajax({
+                type: "POST",
+                method: "POST",
+                contentType: "application/json",
+                url: "https://api.rainway.io/v2/user/register",
+                data: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password,
+                    passwordValidate: passwordValidate
+                }),
+                success: function(data) {
+                    console.log(data);
+                    showMessage(data);
+                }
+            });
+        } else {
+            showMessage({
+                error: true,
+                message: "Please accept the terms."
+            });
+        }
+    }
+
+    e.preventDefault()
+});
+
+function showMessage(msg) {
+    var $alert = $(".info-box");
+    $alert.show().text(msg.message);
+    $alert.removeClass("alert-success alert-danger");
+    $alert.addClass(msg.error ? "alert-danger" : "alert-success");
+    msg.error && enableSubmit();
+}
+
+function hideMessage() {
+    $(".info-box").hide();
+}

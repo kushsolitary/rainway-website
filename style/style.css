@@ -13,7 +13,7 @@ a, a:focus, a:active {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #060311;
+  background: #09051a;
   color: white; }
   body.modal-visible {
     overflow: hidden; }
@@ -226,7 +226,7 @@ footer {
   visibility: hidden;
   max-width: 500px;
   width: 500px;
-  background: #060311;
+  background: #09051a;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: absolute;
